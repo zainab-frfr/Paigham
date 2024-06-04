@@ -38,7 +38,7 @@ class MyChatPage extends StatelessWidget {
         children: [
           // display all the messages
           Expanded(child: _buildMessageList()),
-          _buildUserInput(),
+          _buildUserInput(context),
         ],
       ),
     );
@@ -70,19 +70,35 @@ class MyChatPage extends StatelessWidget {
 
     Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
 
-    return Text(data['message']);
+    bool isCurrentUser = data['senderID'] == _authService.getCurrentUser()!.uid;
+
+    var allignment = isCurrentUser? Alignment.centerRight : Alignment.centerLeft;
+
+    return Container(
+      alignment: allignment,
+      child: Text(data['message'])
+      );
 
   }
 
-  Widget _buildUserInput(){
-    return Row(children: [
-      Expanded(
-        child: MyTextField(
-          hintText: "Type a message", obscureText: false, controller: _messageController)
-      ),
-      IconButton(onPressed: sendMessage, icon: const Icon(Icons.send)),
-    ]
-      
-      );
+  Widget _buildUserInput(BuildContext context){
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 30),
+      child: Row(children: [
+        Expanded(
+          child: MyTextField(
+            hintText: "Type a message", obscureText: false, controller: _messageController)
+        ),
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Theme.of(context).colorScheme.primary,
+          ),
+          margin: const EdgeInsets.only(right: 25),
+          child: IconButton(onPressed: sendMessage, icon: Icon(Icons.send, color: Theme.of(context).colorScheme.secondary))),
+      ]
+        
+        ),
+    );
   }
 }
