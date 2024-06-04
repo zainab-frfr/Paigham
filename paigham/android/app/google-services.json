@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499241737875",
+    "project_id": "paigham-1a40b",
+    "storage_bucket": "paigham-1a40b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499241737875:android:e4c41f385e3490bf933766",
+        "android_client_info": {
+          "package_name": "com.example.paigham"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQlIlAaaZKLJtN7mCRxQwrLehA-iTH7Aw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
