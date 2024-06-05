@@ -16,15 +16,16 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         iconTheme: IconThemeData(
-          color: Theme.of(context).colorScheme.secondary,
+          color: Theme.of(context).colorScheme.primary,
         ),
         centerTitle: true,
         title: Text(
-          'Home Page',
+          'Users',
           style: TextStyle(
-              color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.bold),
         ),
       ),
