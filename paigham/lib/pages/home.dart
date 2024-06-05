@@ -23,7 +23,7 @@ class MyHomePage extends StatelessWidget {
         ),
         centerTitle: true,
         title: Text(
-          'Users',
+          'Home',
           style: TextStyle(
               color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.bold),

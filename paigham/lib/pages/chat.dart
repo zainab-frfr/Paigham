@@ -81,7 +81,7 @@ class _MyChatPageState extends State<MyChatPage> {
         backgroundColor: Colors.transparent,
         foregroundColor: Theme.of(context).colorScheme.primary,
         elevation: 0,
-        title: Text(widget.recieverUsername),
+        title: Text(widget.recieverUsername, style: const TextStyle( fontWeight: FontWeight.bold),),
       ),
       body: Column(
         children: [

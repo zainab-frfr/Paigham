@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import "package:paigham/themes/theme_provider.dart";
+import "package:provider/provider.dart";
 
 class MyUserTile extends StatelessWidget {
   final String text;
@@ -8,6 +10,8 @@ class MyUserTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -19,9 +23,9 @@ class MyUserTile extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Row(
           children: [
-            const Icon(Icons.person), 
+            Icon(Icons.person, color: isDarkMode? const Color.fromARGB(255, 212, 209, 209): Colors.black,), 
             const SizedBox(width: 20,),
-            Text(text)
+            Text(text, style: TextStyle(color: isDarkMode? Colors.white: Colors.black),)
           ],
         ),
       ),
